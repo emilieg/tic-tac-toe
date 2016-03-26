@@ -1,0 +1,86 @@
+.board {
+  height: 600px;
+  width: 600px;
+  background-color: black;
+}
+.square1 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square2 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square3 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square4 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square5 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square6 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square7 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square8 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}
+.square9 {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  background-color: white;
+  margin:1.66%;
+  overflow:hidden;
+}

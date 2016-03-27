@@ -1,5 +1,7 @@
 var gameBoard = ['e','e','e','e','e','e','e','e','e'];
 
+var count = 0;
+var gameRunning = true;
 
 var playerTurn = "X";
 var flipTurn = function() {
@@ -11,24 +13,18 @@ var flipTurn = function() {
 }
 
 
+
 //check gameboard to see if that spot has already been marked
 var updateCell = function(cellNum, playerTurn) {
   if (gameBoard[cellNum -1] !== 'X' && gameBoard[cellNum -1] !== 'O') {
     var cellId = "cell" + cellNum;
     document.getElementById(cellId).innerHTML = playerTurn;  
+    count ++;
+    console.log(count);
   } else {
     alert ("Choose a different box!");
   }
 }
-
-
-
-
-
-// var updateCell = function(cellNum) {
-//     var cellId = "cell" + cellNum;
-//     document.getElementById(cellId).innerHTML = playerTurn;       
-//     }
 
 
 
@@ -37,20 +33,41 @@ var savePlay = function(playerTurn, cellNum) {
   console.log("The gameBoard is: " + gameBoard);
 }
 
+var whoWon = function() {
+if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard[0] !== 'e') ||
+    (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5] && gameBoard[3] !== 'e') ||
+    (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8] && gameBoard[6] !== 'e') ||
+    (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6] && gameBoard[0] !== 'e') ||
+    (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7] && gameBoard[1] !== 'e') ||
+    (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8] && gameBoard[2] !== 'e') ||
+    (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8] && gameBoard[0] !== 'e') ||
+    (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6] && gameBoard[2] !== 'e')
+) {
+  console.log(playerTurn + " has won!");
+  gameRunning = false;
+} else if ( count === 9) {
+  console.log("It's a TIE!");
+  gameRunning = false;
+}
+};
+
 
 
 //gameLoop will be called by each event listener
 //gameLoop consists several functions
 var gameLoop = function(cellNum) {
+  if (gameRunning === true) {
   console.log("you clicked on "+ cellNum);
 
   console.log("it is playerTurn " + playerTurn);
    updateCell(cellNum, playerTurn);
    savePlay(playerTurn, cellNum); 
+   whoWon();
    flipTurn();   
-
+  } else {
+    alert ("GAME OVER");
+  }
 }
-
 
 
 

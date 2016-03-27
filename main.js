@@ -43,7 +43,7 @@ if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard
     (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8] && gameBoard[0] !== 'e') ||
     (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6] && gameBoard[2] !== 'e')
 ) {
-  console.log(playerTurn + " has won!");
+  alert(playerTurn + " has won!");
   gameRunning = false;
 } else if ( count === 9) {
   console.log("It's a TIE!");
@@ -54,7 +54,7 @@ if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard
 
 
 //gameLoop will be called by each event listener
-//gameLoop consists several functions
+//gameLoop consists of several functions
 var gameLoop = function(cellNum) {
   if (gameRunning === true) {
   console.log("you clicked on "+ cellNum);
@@ -63,7 +63,8 @@ var gameLoop = function(cellNum) {
    updateCell(cellNum, playerTurn);
    savePlay(playerTurn, cellNum); 
    whoWon();
-   flipTurn();   
+   flipTurn(); 
+  alert("IT IS PLAYER " + playerTurn + " 'S TURN!"); 
   } else {
     alert ("GAME OVER");
   }
@@ -108,3 +109,23 @@ document.getElementById("square9").addEventListener("click", function() {
         gameLoop(9);
 
 })
+
+document.getElementById("reset").addEventListener("click", function(){
+  document.getElementById('cell1').innerHTML ="e";
+  document.getElementById('cell2').innerHTML ="e";
+  document.getElementById('cell3').innerHTML ="e";
+  document.getElementById('cell4').innerHTML ="e";
+  document.getElementById('cell5').innerHTML ="e";
+  document.getElementById('cell6').innerHTML ="e";
+  document.getElementById('cell7').innerHTML ="e";
+  document.getElementById('cell8').innerHTML ="e";
+  document.getElementById('cell9').innerHTML ="e";
+  gameRunning = false;
+  location.reload();
+  gameRunning = true;
+
+})
+
+
+
+

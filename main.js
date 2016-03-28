@@ -1,4 +1,4 @@
-var gameBoard = ['e','e','e','e','e','e','e','e','e'];
+var gameBoard = ['','','','','','','','',''];
 
 var count = 0;
 var gameRunning = true;
@@ -34,14 +34,14 @@ var savePlay = function(playerTurn, cellNum) {
 }
 
 var whoWon = function() {
-if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard[0] !== 'e') ||
-    (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5] && gameBoard[3] !== 'e') ||
-    (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8] && gameBoard[6] !== 'e') ||
-    (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6] && gameBoard[0] !== 'e') ||
-    (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7] && gameBoard[1] !== 'e') ||
-    (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8] && gameBoard[2] !== 'e') ||
-    (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8] && gameBoard[0] !== 'e') ||
-    (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6] && gameBoard[2] !== 'e')
+if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard[0] !== '') ||
+    (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5] && gameBoard[3] !== '') ||
+    (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8] && gameBoard[6] !== '') ||
+    (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6] && gameBoard[0] !== '') ||
+    (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7] && gameBoard[1] !== '') ||
+    (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8] && gameBoard[2] !== '') ||
+    (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8] && gameBoard[0] !== '') ||
+    (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6] && gameBoard[2] !== '')
 ) {
   alert(playerTurn + " has won!");
   gameRunning = false;
@@ -67,6 +67,8 @@ var gameLoop = function(cellNum) {
   alert("IT IS PLAYER " + playerTurn + " 'S TURN!"); 
   } else {
     alert ("GAME OVER");
+//alert for playerTurn still shows up here after the game is over    
+    gameRunning = false;
   }
 }
 
@@ -111,15 +113,15 @@ document.getElementById("square9").addEventListener("click", function() {
 })
 
 document.getElementById("reset").addEventListener("click", function(){
-  document.getElementById('cell1').innerHTML ="e";
-  document.getElementById('cell2').innerHTML ="e";
-  document.getElementById('cell3').innerHTML ="e";
-  document.getElementById('cell4').innerHTML ="e";
-  document.getElementById('cell5').innerHTML ="e";
-  document.getElementById('cell6').innerHTML ="e";
-  document.getElementById('cell7').innerHTML ="e";
-  document.getElementById('cell8').innerHTML ="e";
-  document.getElementById('cell9').innerHTML ="e";
+  document.getElementById('cell1').innerHTML ="";
+  document.getElementById('cell2').innerHTML ="";
+  document.getElementById('cell3').innerHTML ="";
+  document.getElementById('cell4').innerHTML ="";
+  document.getElementById('cell5').innerHTML ="";
+  document.getElementById('cell6').innerHTML ="";
+  document.getElementById('cell7').innerHTML ="";
+  document.getElementById('cell8').innerHTML ="";
+  document.getElementById('cell9').innerHTML ="";
   gameRunning = false;
   location.reload();
   gameRunning = true;

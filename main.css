@@ -14,8 +14,8 @@ h1 {
 #board {
  /* background-image: url("stardust.png");*/
   /*background-color: black;*/
-  /*width: 600px;
-  height: 600px;*/
+  width: 600px;
+  height: 600px;
   background-size:contain;
   
   /*background-position:center;*/

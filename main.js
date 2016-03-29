@@ -3,7 +3,12 @@ var gameBoard = ['','','','','','','','',''];
 var count = 0;
 var gameRunning = true;
 
-var playerTurn = "X";
+var playerTurn = "X"
+var winnerX = 0;
+var winnerO = 0;
+var winnerTie =0;
+
+
 var flipTurn = function() {
   if(playerTurn === "X") {
     playerTurn = "O";
@@ -12,6 +17,8 @@ var flipTurn = function() {
   }
 }
 
+var playerXscore = 0;
+var playerOscore = 0;
 
 
 //check gameboard to see if that spot has already been marked
@@ -19,6 +26,7 @@ var updateCell = function(cellNum, playerTurn) {
   if (gameBoard[cellNum -1] !== 'X' && gameBoard[cellNum -1] !== 'O') {
     var cellId = "cell" + cellNum;
     document.getElementById(cellId).innerHTML = playerTurn;  
+      document.getElementById('pX').innerHTML = playerTurn;
     count ++;
     console.log(count);
   } else {
@@ -44,9 +52,18 @@ if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard
     (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6] && gameBoard[2] !== '')
 ) {
   alert(playerTurn + " has won!");
+  if (playerTurn === "X") {
+    winnerX = winnerX + 1;
+    document.getElementById('scoreX').innerHTML = winnerX; 
+  } else if (playerTurn === "O") {
+    winnerO = winnerO + 1;
+    document.getElementById('scoreO').innerHTML = winnerO; 
+  } else {
+    winnerTie = winnerTie +1;
+  }
   gameRunning = false;
 } else if ( count === 9) {
-  console.log("It's a TIE!");
+  alert("It's a TIE!");
   gameRunning = false;
 }
 };
@@ -56,7 +73,8 @@ if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard
 //gameLoop will be called by each event listener
 //gameLoop consists of several functions
 var gameLoop = function(cellNum) {
-  if (gameRunning === true) {
+    if (gameRunning === true) {
+
   console.log("you clicked on "+ cellNum);
 
   console.log("it is playerTurn " + playerTurn);
@@ -64,10 +82,12 @@ var gameLoop = function(cellNum) {
    savePlay(playerTurn, cellNum); 
    whoWon();
    flipTurn(); 
-  alert("IT IS PLAYER " + playerTurn + " 'S TURN!"); 
+  //alert("IT IS PLAYER " + playerTurn + " 'S TURN!"); 
   } else {
-    alert ("GAME OVER");
-//alert for playerTurn still shows up here after the game is over    
+    // startGame();   
+    //alert ("GAME OVER");
+//alert for playerTurn still shows up here after the game is over 
+
     gameRunning = false;
   }
 }
@@ -122,10 +142,9 @@ document.getElementById("reset").addEventListener("click", function(){
   document.getElementById('cell7').innerHTML ="";
   document.getElementById('cell8').innerHTML ="";
   document.getElementById('cell9').innerHTML ="";
-  gameRunning = false;
-  location.reload();
+  gameBoard = ['','','','','','','','',''];
+  count = 0;
   gameRunning = true;
-
 })
 
 

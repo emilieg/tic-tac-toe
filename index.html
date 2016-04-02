@@ -6,102 +6,61 @@
 </head>
 <body>
   <div class="game">
-    
-      <h1> Tic Tac Toe </h1> 
-           <form id=display>
-   <button type="reset" value="Reset" id="reset">Reset</button> 
-      <label for="Turn">TURN:</label>
-        <div id="pX"></div>
 
-          <div id="scoreX"> XScore goes here </div>  
-          <div id="scoreO"> OScore goes here </div>
-      </form>    
-      <div id="board">
-      <div id="square1">
-        <div class="pMove"> 
-        <!--   <div class="table"> -->
-            <div id="cell1" class="cellStyle">
+    <h1> Tic Tac Toe </h1> 
+    <div id=display>
+    <div id="playerInfo">
+      <p id="whoWon">WINNER:</p>
+     <!--  <p class="Turn">TURN:</p> -->
+      <div id="pX"></div>
+    </div>  
 
-            </div>
-        <!--   </div> -->
+      <div id="Xscore">X's Score:<div id="scoreX">  </div></div>  
+      <div id="Oscore">O's Score:<div id="scoreO">  </div></div>
+
+    </div>    
+    <div id="board">
+      <div id="square1">     
+        <div id="cell1" class="cellStyle">
         </div>
       </div>
       <div id="square2">
-        <div class="pMove">  
-      <!--     <div class="table"> -->
-            <div id="cell2" class="cellStyle">
-
-            </div>
-   <!--        </div> -->
+        <div id="cell2" class="cellStyle">
         </div>
       </div>
       <div id="square3">
-        <div class="pMove"> 
-     <!--      <div class="table"> -->
-            <div id="cell3" class="cellStyle">
-
-            </div>
-      <!--     </div> -->
+        <div id="cell3" class="cellStyle">
         </div>
       </div>
       <div id="square4">
-        <div class="pMove"> 
-      <!--     <div class="table"> -->
-            <div id="cell4" class="cellStyle">
-
-            </div>
-     <!--      </div> -->
-        </div>
+        <div id="cell4" class="cellStyle">
+        </div>  
       </div>
       <div id="square5">
-        <div class="pMove"> 
-   <!--        <div class="table"> -->
-            <div id="cell5" class="cellStyle">
-
-            </div>
-     <!--      </div> -->
+        <div id="cell5" class="cellStyle">
         </div>
       </div>
       <div id="square6">
-        <div class="pMove"> 
-      <!--     <div class="table"> -->
-            <div id="cell6" class="cellStyle">
-
-            </div>
-    <!--       </div> -->
+        <div id="cell6" class="cellStyle">
         </div>
       </div>
       <div id="square7">
-        <div class="pMove"> 
-        <!--   <div class="table"> -->
-            <div id="cell7" class="cellStyle">
-
-            </div>
-   <!--        </div> -->
-        </div>
+        <div id="cell7" class="cellStyle">
+        </div> 
       </div>
       <div id="square8">
-        <div class="pMove"> 
-       <!--    <div class="table"> -->
-            <div id="cell8" class="cellStyle">
-
-            </div>
-   <!--        </div> -->
-        </div>
+        <div id="cell8" class="cellStyle">
+        </div>  
       </div>
       <div id="square9">
-        <div class="pMove"> 
-   <!--        <div class="table"> -->
-            <div id="cell9" class="cellStyle">
- 
-            </div>
-<!--           </div> -->
+        <div id="cell9" class="cellStyle">
         </div>
       </div>
- 
-        </div>
-      </div> 
     </div>
-    <script src="main.js"> </script>
-  </body>
-  </html>
+    <div id=buttonDiv>
+      <button type="reset" value="Reset" id="reset"> Reset </button> 
+    </div>
+  </div> 
+  <script src="main.js"> </script>
+</body>
+</html>

@@ -26,7 +26,7 @@ var updateCell = function(cellNum, playerTurn) {
   if (gameBoard[cellNum -1] !== 'X' && gameBoard[cellNum -1] !== 'O') {
     var cellId = "cell" + cellNum;
     document.getElementById(cellId).innerHTML = playerTurn;  
-      document.getElementById('pX').innerHTML = playerTurn;
+      document.getElementById('pX').innerHTML = "TURN: " + playerTurn;
     count ++;
     console.log(count);
   } else {
@@ -51,7 +51,8 @@ if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard
     (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8] && gameBoard[0] !== '') ||
     (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6] && gameBoard[2] !== '')
 ) {
-  alert(playerTurn + " has won!");
+  document.getElementById('whoWon').innerHTML = "Player: " + playerTurn + " won"; 
+  // alert(playerTurn + " has won!");
   if (playerTurn === "X") {
     winnerX = winnerX + 1;
     document.getElementById('scoreX').innerHTML = winnerX; 
@@ -63,7 +64,8 @@ if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard
   }
   gameRunning = false;
 } else if ( count === 9) {
-  alert("It's a TIE!");
+  document.getElementById('whoWon').innerHTML = "It's a tie!" 
+  // alert("It's a TIE!");
   gameRunning = false;
 }
 };
@@ -145,6 +147,8 @@ document.getElementById("reset").addEventListener("click", function(){
   gameBoard = ['','','','','','','','',''];
   count = 0;
   gameRunning = true;
+  document.getElementById('pX').innerHTML = "";
+  document.getElementById('whoWon').innerHTML = ""; 
 })
 
 

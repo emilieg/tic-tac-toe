@@ -21,8 +21,27 @@ h1 {
   height: 468px;
   padding: 0px;
   border: 4px solid black;
-  
 }
+
+#display {
+  width: 468px;
+  margin: auto;
+}
+
+#playerInfo {
+  text-align: center;
+}
+
+#Xscore, #scoreX {
+display: inline-block;
+}
+#Oscore, #scoreO {
+display: inline-block;
+float: right;
+}
+
+
+
 #square1 {
   float: left;
   width: 150px;
@@ -112,11 +131,12 @@ h1 {
 .cellStyle{
   color: white;
   font-size: 100px;
+  padding-top: 15px;
 }
-#cell2{
+/*#cell2{
    color: white;
-}
-#cell3{
+}*/
+/*#cell3{
     display:table-cell;
     vertical-align:middle;
     height:100%;
@@ -125,8 +145,8 @@ h1 {
     text-align: center;
     font-size: 100px;
     font-style: 
-}
-#cell4{
+}*/
+/*#cell4{
     display:table-cell;
     vertical-align:middle;
     height:100%;
@@ -135,63 +155,66 @@ h1 {
     text-align: center;
     font-size: 100px;
     font-style: 
-}
+}*/
 #cell5{
-    display:table-cell;
+   /* display:table-cell;
     vertical-align:middle;
     height:100%;
     width:100%;
     color: white;
     text-align: center;
     font-size: 100px;
-    font-style: 
+    font-style: */
 }
 #cell6{
-    display:table-cell;
+   /* display:table-cell;
     vertical-align:middle;
     height:100%;
     width:100%;
     color: white;
     text-align: center;
     font-size: 100px;
-    font-style: 
+    font-style: */
 }
 #cell7{
-    display:table-cell;
+    /*display:table-cell;
     vertical-align:middle;
     height:100%;
     width:100%;
     color: white;
     text-align: center;
     font-size: 100px;
-    font-style: 
+    font-style: */
 }
 #cell8{
-    display:table-cell;
+  /*  display:table-cell;
     vertical-align:middle;
     height:100%;
     width:100%;
     color: white;
     text-align: center;
     font-size: 100px;
-    font-style: 
+    font-style: */
 }
 #cell9{
-    display:table-cell;
+    /*display:table-cell;
     vertical-align:middle;
     height:100%;
     width:100%;
     color: white;
     text-align: center;
     font-size: 100px;
-    font-style: 
+    font-style:*/ 
+}
+
+#buttonDiv{
+  width: 468px;
+  margin: auto;
+  text-align: center;
+  padding-top: 15px;
 }
 
 button {
-  float: left;
-  margin-left: 260px;
-  margin-bottom: 200px;
-  display: inline-block;
   font-size: 25px;
 }
 

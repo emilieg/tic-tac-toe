@@ -3,13 +3,14 @@ var gameBoard = ['','','','','','','','',''];
 var count = 0;
 var gameRunning = true;
 
-var playerTurn = "X"
+var playerTurn = "X";
 var winnerX = 0;
 var winnerO = 0;
 var winnerTie =0;
 
 
 var flipTurn = function() {
+
   if(playerTurn === "X") {
     playerTurn = "O";
   }  else {
@@ -23,6 +24,7 @@ var playerOscore = 0;
 
 //check gameboard to see if that spot has already been marked
 var updateCell = function(cellNum, playerTurn) {
+
   if (gameBoard[cellNum -1] !== 'X' && gameBoard[cellNum -1] !== 'O') {
     var cellId = "cell" + cellNum;
     document.getElementById(cellId).innerHTML = playerTurn;  
@@ -75,6 +77,7 @@ if ((gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2] && gameBoard
 //gameLoop will be called by each event listener
 //gameLoop consists of several functions
 var gameLoop = function(cellNum) {
+
     if (gameRunning === true) {
 
   console.log("you clicked on "+ cellNum);
@@ -97,6 +100,7 @@ var gameLoop = function(cellNum) {
 
 
 document.getElementById("square1").addEventListener("click", function() {  
+        
         gameLoop(1);
 
 })
